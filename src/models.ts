@@ -867,23 +867,7 @@ export class Models extends BaseModule {
   }
 
   /**
-   * Generates an image based on a text description and configuration.
-   *
-   * @param params - The parameters for generating images.
-   * @return The response from the API.
-   *
-   * @example
-   * ```ts
-   * const response = await ai.models.generateImages({
-   *  model: 'imagen-3.0-generate-002',
-   *  prompt: 'Robot holding a red skateboard',
-   *  config: {
-   *    numberOfImages: 1,
-   *    includeRaiReason: true,
-   *  },
-   * });
-   * console.log(response?.generatedImages?.[0]?.image?.imageBytes);
-   * ```
+   * Private method for generating images.
    */
   private async generateImagesInternal(
     params: types.GenerateImagesParameters,
@@ -973,6 +957,9 @@ export class Models extends BaseModule {
     }
   }
 
+  /**
+   * Private method for editing an image.
+   */
   private async editImageInternal(
     params: _internal_types.EditImageParametersInternal,
   ): Promise<types.EditImageResponse> {
@@ -1024,6 +1011,9 @@ export class Models extends BaseModule {
     }
   }
 
+  /**
+   * Private method for upscaling an image.
+   */
   private async upscaleImageInternal(
     params: _internal_types.UpscaleImageAPIParametersInternal,
   ): Promise<types.UpscaleImageResponse> {
@@ -1750,29 +1740,8 @@ export class Models extends BaseModule {
   }
 
   /**
-   *  Generates videos based on a text description and configuration.
-   *
-   * @param params - The parameters for generating videos.
-   * @return A Promise<GenerateVideosOperation> which allows you to track the progress and eventually retrieve the generated videos using the operations.get method.
-   *
-   * @example
-   * ```ts
-   * const operation = await ai.models.generateVideos({
-   *  model: 'veo-2.0-generate-001',
-   *  prompt: 'A neon hologram of a cat driving at top speed',
-   *  config: {
-   *    numberOfVideos: 1
-   * });
-   *
-   * while (!operation.done) {
-   *   await new Promise(resolve => setTimeout(resolve, 10000));
-   *   operation = await ai.operations.getVideosOperation({operation: operation});
-   * }
-   *
-   * console.log(operation.response?.generatedVideos?.[0]?.video?.uri);
-   * ```
+   * Private method for generating videos.
    */
-
   private async generateVideosInternal(
     params: types.GenerateVideosParameters,
   ): Promise<types.GenerateVideosOperation> {
