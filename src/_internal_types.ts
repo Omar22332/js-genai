@@ -60,8 +60,8 @@ export declare interface UpscaleImageAPIConfigInternal {
   includeRaiReason?: boolean;
   /** The image format that the output should be saved as. */
   outputMimeType?: string;
-  /** The level of compression if the ``output_mime_type`` is
-      ``image/jpeg``. */
+  /** The level of compression. Only applicable if the
+      ``output_mime_type`` is ``image/jpeg``. */
   outputCompressionQuality?: number;
   /** Whether to add an image enhancing step before upscaling.
       It is expected to suppress the noise and JPEG compression artifacts
